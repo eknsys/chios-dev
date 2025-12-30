@@ -213,10 +213,14 @@ void prgmAbout() {
 
     vga_write_at(2, 2, "ChiOS System App - Info", 0x1B);
 
-    vga_write_at(4, 6, "Systemversion: noreldev7.0", 0x1F);
+    vga_write_at(4, 6, "Systemversion: rel0.2-dev7.0", 0x1F);
 
     draw_button(64, 22, "<- main menu", 0x1E);
     add_button(64, 22, "<- main menu", mainapp);
+}
+
+void prgmSettings() {
+    
 }
 
 void mainapp() {
@@ -230,6 +234,9 @@ void mainapp() {
 
     draw_button(16, 7, "Info", 0x1E);
     add_button(16, 7, "Info", prgmAbout);
+
+    draw_button(24, 7, "Einstellungen", 0x1E);
+    add_button(24, 7, "Einstellungen", prgmSettings);
 }
 
 void kernel_main(uint32_t magic, void *mb_info) {
